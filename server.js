@@ -50,7 +50,7 @@ if (town.isMaster) {
 
     app.get('/', (req, res) => {
         res.json({
-            message: 'HTML to PDF service.'
+            message: 'HTML to PDF dasdasd.'
         });
     });
 
