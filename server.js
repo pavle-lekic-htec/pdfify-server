@@ -2,6 +2,7 @@
 
 const ghostTown = require('ghost-town');
 const phantomjs = require('phantomjs-prebuilt');
+var cors = require('cors');
 
 let config = {
     port: process.env.PORT || 3000,
@@ -34,12 +35,13 @@ if (town.isMaster) {
     app.set('port', config.port);
 
     // CORS
-    app.use(function(req, res, next) {
-        res.header("Access-Control-Allow-Origin", "*");
-        res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-        res.header("Access-Control-Allow-Methods", "POST, GET, PUT, DELETE, OPTIONS");
-        next();
-    });
+  app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", '*');
+    res.header("Access-Control-Allow-Credentials", true);
+    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
+    res.header("Access-Control-Allow-Headers", 'Origin,X-Requested-With,Content-Type,Accept,content-type,application/json');
+    next();
+  });
 
     app.use(bodyParser.json({ limit: config.htmlSizeLimit }));
     app.use(bodyParser.urlencoded({
