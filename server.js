@@ -29,7 +29,7 @@ if (town.isMaster) {
     const logger = require('morgan');
     const bodyParser = require('body-parser');
     const http = require('http');
-
+    console.log(http);
     let app = express();
     app.use(logger('dev'));
     app.set('port', config.port);
