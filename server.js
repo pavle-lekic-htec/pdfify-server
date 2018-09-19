@@ -4,7 +4,7 @@ const ghostTown = require('ghost-town');
 const phantomjs = require('phantomjs-prebuilt');
 
 let config = {
-    port: process.env.PORT || 3000,
+    port: 80,
     htmlSizeLimit: process.env.HTML_SIZE_LIMIT || '10mb',
     workerCount: process.env.WORKER_COUNT || 2,
     workerDeath: process.env.WORKER_DEATH || 20,
@@ -29,7 +29,6 @@ if (town.isMaster) {
     const logger = require('morgan');
     const bodyParser = require('body-parser');
     const http = require('http');
-    console.log(http);
     let app = express();
     app.use(logger('dev'));
     app.set('port', config.port);
