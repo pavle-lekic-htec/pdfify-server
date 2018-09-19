@@ -4,7 +4,7 @@ const ghostTown = require('ghost-town');
 const phantomjs = require('phantomjs-prebuilt');
 
 let config = {
-    port: 80,
+    port: process.env.PORT || 3000,
     htmlSizeLimit: process.env.HTML_SIZE_LIMIT || '10mb',
     workerCount: process.env.WORKER_COUNT || 2,
     workerDeath: process.env.WORKER_DEATH || 20,
