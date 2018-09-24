@@ -2,7 +2,7 @@
 
 const ghostTown = require('ghost-town');
 const phantomjs = require('phantomjs-prebuilt');
-var cors = require('cors');
+const cors = require('cors');
 
 let config = {
     port: process.env.PORT || 3000,
